@@ -1,2 +1,2 @@
-# GatewayJ.github.io
+## 星辰大海
 个人博客
