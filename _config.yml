@@ -1,6 +1,6 @@
 # Site settings
 title: 星辰大海
-SEOTitle: 季宏伟的博客|JiHw blog 
+SEOTitle: 季宏伟的博客|JiHw blog
 header-img: img/home-bg.jpg
 email: 835269233@qq.com
 description: "啊哈"
@@ -69,7 +69,7 @@ kramdown:
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Fighting all the way"
-sidebar-avatar: /img/avatar-jhw.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-jhw.jpg    # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
