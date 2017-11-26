@@ -34,7 +34,7 @@ son.name = "赋值"
 print(son.name)
 
 ```
-实际上Djangode orm定义字段类型的时候用的技术就是orm.
+实际上Django的orm定义字段类型的时候用的技术就是Descriptor。
 
 同时也可以用 `proper()` 来创建Descriptor,这样就不用写两个类了。
 ```Python
