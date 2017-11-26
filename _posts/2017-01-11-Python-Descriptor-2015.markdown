@@ -9,8 +9,8 @@ tags:
     - Python
 ---
 
-一个Descriptor是指实现了__get__的类，__set__和__delete__是可选的，如果实现了__get__和__set__，则Data Descriptor,如果只是实现了__get__则称为Non-Data Descriptor普通实例操作属性时（ get set del） 都是在这个实例或者object或者他的父类的__dict__ 上进行的，查找的顺序也是实例，类，父类.
-所以相应的Descriptor操作属性就是用__get__，__set__和__delete__方法，而不是通过__dict__属性
+一个Descriptor是指实现了`__get__ `的类, `__set__` 和 `__delete__` 是可选的,如果实现了 `__get__ `和 `__set__` ,则Data Descriptor,如果只是实现了 `__get__` 则称为Non-Data Descriptor。普通实例操作属性时（ get set del） 都是在这个实例或者object或者他的父类的 `__dict__` 上进行的，查找的顺序也是实例，类，父类.
+所以相应的Descriptor操作属性就是用 `__get__` ， `__set__`和 `__delete__` 方法，而不是通过`__dict__`属性
 
 ```Python
 class Descriptor(object):
@@ -34,6 +34,25 @@ son.name = "赋值"
 print(son.name)
 
 ```
+实际上Djangode orm定义字段类型的时候用的技术就是orm.
 
-http://blog.csdn.net/huithe/article/details/7484606
-https://www.zhihu.com/question/25391709
+同时也可以用 `proper()` 来创建Descriptor,这样就不用写两个类了。
+```Python
+class Son():
+
+    def getfunc(self):
+        return "this is get"
+
+    def setfunc(self, value):
+        print("this is set")
+
+    def delfunc(self):
+        return "this is del"
+
+    desc=property(getfunc, setfunc, delfunc)
+
+son = Son()
+son.desc = "asd"
+print(son.desc)
+```
+[知乎链接](https://www.zhihu.com/question/25391709)
